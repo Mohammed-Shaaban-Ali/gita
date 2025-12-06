@@ -72,7 +72,7 @@ function CompanyProfile({}: Props) {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.5,
-                  delay: 0.3 + index * 0.1,
+                  delay: 0.2 + index * 0.1,
                   ease: "easeOut",
                 }}
                 className="flex items-center gap-3 sm:gap-4"
