@@ -12,16 +12,16 @@ type Props = {};
 function CompanyProfile({}: Props) {
   return (
     <section className="container py-12 md:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
         {/* Image Section */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="col-span-1 lg:col-span-2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full relative order-2 lg:order-1"
+          className="col-span-1 md:col-span-2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full relative order-2 lg:order-1"
         >
-          <div className="w-3/5 h-full bg-green rounded-tl-[80px] sm:rounded-tl-[100px] lg:rounded-tl-[120px] rounded-tr-2xl lg:rounded-tr-3xl absolute top-0 right-0 z-0"></div>
+          <div className="w-3/5 h-full bg-green rounded-tl-[80px] sm:rounded-tl-[100px] lg:rounded-tl-[120px] rounded-tr-2xl lg:rounded-tr-3xl   rounded-b-3xl   absolute top-0 right-0 z-0"></div>
           <div className="w-full h-[90%] rounded-tr-[120px] sm:rounded-tr-[150px] lg:rounded-tr-[180px] rounded-tl-2xl lg:rounded-tl-3xl rounded-b-2xl lg:rounded-b-3xl z-10 absolute bottom-0 right-0 overflow-hidden">
             <Image
               src={companyProfileImage}
@@ -33,7 +33,7 @@ function CompanyProfile({}: Props) {
         </motion.div>
 
         {/* Content Section */}
-        <div className="col-span-1 lg:col-span-3 w-full order-1 lg:order-2">
+        <div className="col-span-1 md:col-span-3 w-full order-1 lg:order-2">
           {/* titles & description */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -47,7 +47,7 @@ function CompanyProfile({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-2xl sm:text-3xl md:text-32 font-semibold text-center lg:text-right"
+              className="text-32 font-semibold text-center lg:text-right"
             >
               بروفايل شركتنا
             </motion.h2>
@@ -56,7 +56,7 @@ function CompanyProfile({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-20 text-gray text-center lg:text-right"
+              className="text-20 text-gray text-center lg:text-right"
             >
               قم بتحميل بوفايلات الشركة الخاصة بنا لمعرفة المزيد عنا
             </motion.p>
@@ -101,11 +101,7 @@ function CompanyProfile({}: Props) {
 
                   {/* icons */}
                   <div className="flex items-center gap-2 shrink-0">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center"
-                    >
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center">
                       <Image
                         src={eyeIcon}
                         alt="eye"
@@ -113,12 +109,8 @@ function CompanyProfile({}: Props) {
                         height={18}
                         className="min-w-4 h-4 sm:min-w-5 sm:h-5"
                       />
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center"
-                    >
+                    </div>
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center">
                       <Image
                         src={downloadIcon}
                         alt="download"
@@ -126,7 +118,7 @@ function CompanyProfile({}: Props) {
                         height={18}
                         className="min-w-4 h-4 sm:min-w-5 sm:h-5"
                       />
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

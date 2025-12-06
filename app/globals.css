@@ -136,14 +136,19 @@
   }
 
   .container {
-    @apply max-w-[1200px]! mx-auto px-4!;
+    @apply max-w-[1280px]! mx-auto px-4!;
   }
 
   /* font sizes */
+  .text-14 {
+    @apply text-[12px]  md:text-[14px];
+  }
+  .text-16 {
+    @apply text-[14px]  md:text-[16px];
+  }
   .text-18 {
     @apply text-[16px]  md:text-[18px];
   }
-
   .text-20 {
     @apply text-[18px]  md:text-[20px];
   }
