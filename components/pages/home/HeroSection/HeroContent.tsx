@@ -26,12 +26,12 @@ export default function HeroContent() {
       </div>
 
       {/* image */}
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
         className="w-full  sm:max-w-[350px] md:min-w-[390px] h-[300px] sm:h-[350px] md:min-h-[390px] max-h-[390px] max-w-[390px]  bg-green-light/10 rounded-2xl md:rounded-3xl"
-      ></motion.div> */}
+      ></motion.div>
     </section>
   );
 }

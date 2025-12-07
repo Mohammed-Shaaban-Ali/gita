@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -28,7 +28,43 @@ const locations = [
 
 function Location({}: Props) {
   const [activeLocation, setActiveLocation] = useState<number>(0);
+  const [shouldLoadMap, setShouldLoadMap] = useState<boolean>(false);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
   const activeLocationData = locations[activeLocation];
+
+  // Lazy load map when container comes into view or when user clicks a location
+  useEffect(() => {
+    if (shouldLoadMap) return; // Already loaded
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoadMap(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Load when 10% of the container is visible
+        rootMargin: "50px", // Start loading 50px before it comes into view
+      }
+    );
+
+    if (mapContainerRef.current) {
+      observer.observe(mapContainerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [shouldLoadMap]);
+
+  // Load map immediately when user clicks on a location
+  const handleLocationClick = (index: number) => {
+    setActiveLocation(index);
+    setShouldLoadMap(true);
+  };
 
   return (
     <section id="branches" className="py-12 md:py-16 ">
@@ -70,7 +106,7 @@ function Location({}: Props) {
                   duration: 0.5,
                   delay: 0.2 + index * 0.1,
                 }}
-                onClick={() => setActiveLocation(index)}
+                onClick={() => handleLocationClick(index)}
                 className={`flex bg-green-light rounded-lg p-3 sm:p-4 min-h-[64px] sm:min-h-[80px] items-center gap-2 sm:gap-2.5 cursor-pointer transition-all ${
                   activeLocation === index
                     ? "ring-2 ring-green shadow-lg"
@@ -95,13 +131,14 @@ function Location({}: Props) {
 
         {/* map */}
         <motion.div
+          ref={mapContainerRef}
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="relative bg-green w-full lg:w-[420px] xl:w-[480px] h-[300px] sm:h-[400px] lg:h-[420px] xl:h-[480px] rounded-lg overflow-hidden shrink-0"
         >
-          {activeLocationData && (
+          {shouldLoadMap && activeLocationData && (
             <iframe
               title="map-location"
               src={activeLocationData.link}
@@ -110,9 +147,13 @@ function Location({}: Props) {
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
             />
+          )}
+          {!shouldLoadMap && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-white text-lg">جاري تحميل الخريطة...</div>
+            </div>
           )}
         </motion.div>
       </div>
