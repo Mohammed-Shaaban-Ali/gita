@@ -35,6 +35,7 @@ function Navbar({}: Props) {
                 alt="Golden International Logo"
                 width={60}
                 height={60}
+                priority
                 className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16"
               />
             </div>

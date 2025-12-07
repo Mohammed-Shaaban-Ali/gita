@@ -103,6 +103,7 @@ function Location({}: Props) {
         >
           {activeLocationData && (
             <iframe
+              title="map-location"
               src={activeLocationData.link}
               width="100%"
               height="100%"

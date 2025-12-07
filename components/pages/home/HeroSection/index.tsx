@@ -15,6 +15,7 @@ function HeroSection({}: Props) {
         src={heroImage}
         alt="heroImage"
         fill
+        priority
         className="object-cover z-[-1]"
       />
       <section className="">

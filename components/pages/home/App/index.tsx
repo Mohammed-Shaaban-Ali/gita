@@ -59,7 +59,7 @@ function App({}: Props) {
               className="object-contain"
             />
           </div>
-          <h5 className="text-30 font-medium  -mt-2">لتحميل التطبيق</h5>
+          <h4 className="text-30 font-medium  -mt-2">لتحميل التطبيق</h4>
           <div className="flex items-center gap-5 w-full mt-4">
             <div className="w-full cursor-pointer hover:scale-105 transition-all duration-300">
               <Image

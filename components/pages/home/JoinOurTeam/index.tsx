@@ -74,7 +74,7 @@ function JoinOurTeam({}: Props) {
                 <div className="min-w-12 sm:min-w-14 h-12 sm:h-14  bg-[#E6F3F166] rounded-md flex items-center justify-center text-lg sm:text-xl md:text-[24px] font-bold text-green">
                   {index + 1}
                 </div>
-                <div className="w-full sm:flex-1 h-12 sm:h-14  px-3 sm:px-4 py-3 sm:py-0 bg-white rounded-md border border-gray-300 flex items-start sm:items-center justify-between gap-3 sm:gap-5">
+                <div className="w-full sm:flex-1 h-14  px-3 sm:px-4 py-3 sm:py-0 bg-white rounded-md border border-gray-300 flex items-start sm:items-center justify-between gap-3 sm:gap-5">
                   <div className="flex flex-col gap-0 min-w-0">
                     <h4 className="text-xs sm:text-sm md:text-[14px] font-medium truncate">
                       مسمى العرض الوظيفي / الاعلان{" "}
