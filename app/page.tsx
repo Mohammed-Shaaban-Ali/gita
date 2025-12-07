@@ -16,7 +16,7 @@ export default function Home() {
       <AboutUs />
       <App />
       <ArabJet />
-      <Location />
+      {/* <Location /> */}
       <JoinOurTeam />
       <ContactUs />
       <Franchise />
