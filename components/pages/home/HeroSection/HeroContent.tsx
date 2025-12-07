@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import heroImage from "@/public/images/heroImageLogo.png";
+import Image from "next/image";
 export default function HeroContent() {
   return (
     <section className="font-cairo flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10 py-8 sm:py-12 md:py-0 md:h-[500px] text-white container px-4 sm:px-0">
@@ -30,8 +31,17 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        className="w-full  sm:max-w-[350px] md:min-w-[390px] h-[300px] sm:h-[350px] md:min-h-[390px] max-h-[390px] max-w-[390px]  bg-green-light/10 rounded-2xl md:rounded-3xl"
-      ></motion.div>
+        className="w-full flex items-center justify-center px-2.5 sm:max-w-[350px] md:min-w-[390px] h-[300px] sm:h-[350px]  max-w-[390px]  bg-green-light/10 rounded-2xl md:rounded-3xl"
+      >
+        <Image
+          src={heroImage}
+          alt="heroImage"
+          width={390}
+          height={390}
+          className="brightness-0 invert"
+          priority
+        />
+      </motion.div>
     </section>
   );
 }
