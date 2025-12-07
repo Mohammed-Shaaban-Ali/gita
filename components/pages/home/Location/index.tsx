@@ -17,12 +17,12 @@ const locations = [
   {
     id: 2,
     name: "فرع الرياض - حي نمار - طريق ديراب",
-    link: "https://www.google.com/maps?ll=31.952194,35.233194&z=14&t=m&hl=en-US&gl=US&mapclient=embed",
+    link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
   },
   {
     id: 3,
     name: "فرع عرعر - حي الناصرية",
-    link: "https://www.google.com/maps?ll=31.952194,35.233194&z=14&t=m&hl=en-US&gl=US&mapclient=embed",
+    link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
   },
 ];
 
@@ -111,8 +111,6 @@ function Location({}: Props) {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
-              // Add fetchpriority to defer non-critical iframe
-              fetchPriority="low"
             />
           )}
         </motion.div>

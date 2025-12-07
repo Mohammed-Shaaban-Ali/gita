@@ -1,28 +1,14 @@
 import type { Metadata } from "next";
-import { Cairo, Rubik } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
-
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["latin", "arabic"],
-  // Load only essential weights initially to reduce critical path
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-  // Optimize font loading
-  adjustFontFallback: true,
-  fallback: ["system-ui", "arial"],
-});
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin"],
-  // Load only essential weights initially
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
-  preload: true,
-  adjustFontFallback: true,
-  fallback: ["system-ui", "arial"],
 });
 
 export const metadata: Metadata = {
@@ -40,31 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <head>
-        {/* Preconnect to Google Maps for faster loading */}
-        <link
-          rel="preconnect"
-          href="https://maps.googleapis.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="dns-prefetch"
-          href="https://maps.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://maps.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="dns-prefetch"
-          href="https://maps.gstatic.com"
-        />
-      </head>
+      <head></head>
       <body
-        className={`${cairo.variable} ${rubik.variable} antialiased bg-yellow overflow-x-hidden!`}
+        className={` ${rubik.variable} antialiased bg-yellow overflow-x-hidden!`}
       >
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );

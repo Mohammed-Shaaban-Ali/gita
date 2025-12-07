@@ -24,7 +24,7 @@ function HeroSection({}: Props) {
         <Whatsapp />
         {/* hero content */}
         <section className="font-cairo flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10 py-8 sm:py-12 md:py-0 md:h-[500px] text-white container px-4 sm:px-0">
-          <div className="max-w-[630px] flex flex-col gap-4 sm:gap-5 md:gap-6 text-center md:text-right w-full md:w-auto">
+          <div className="max-w-[630px] flex flex-col gap-4 sm:gap-5 text-center md:text-right w-full md:w-auto">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
