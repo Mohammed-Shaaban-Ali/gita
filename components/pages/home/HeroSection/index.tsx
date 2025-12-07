@@ -9,7 +9,7 @@ type Props = {};
 function HeroSection({}: Props) {
   return (
     <section id="home" className="relative ">
-      <Image
+      {/* <Image
         src={heroImage}
         alt="heroImage"
         fill
@@ -17,7 +17,7 @@ function HeroSection({}: Props) {
         quality={85}
         sizes="100vw"
         className="object-cover z-[-1]"
-      />
+      /> */}
       <section className="">
         {/* navbar */}
         <Navbar />
