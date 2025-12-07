@@ -29,7 +29,7 @@ const pdfs = [
 
 function CompanyProfile({}: Props) {
   return (
-    <section className="container py-12 md:py-16">
+    <section id="profile" className="container py-12 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
         {/* Image Section */}
         <motion.div

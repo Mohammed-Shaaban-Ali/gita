@@ -8,7 +8,7 @@ type Props = {};
 
 function Franchise({}: Props) {
   return (
-    <section className="py-12 md:py-16 bg-bg-section">
+    <section id="franchise" className="py-12 md:py-16 bg-bg-section">
       <div className="container mx-auto flex  flex-col lg:flex-row justify-between items-center gap-8 lg:gap-10">
         {/* video */}
         <motion.div

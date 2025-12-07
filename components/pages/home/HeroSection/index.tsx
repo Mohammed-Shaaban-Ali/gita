@@ -10,7 +10,7 @@ type Props = {};
 
 function HeroSection({}: Props) {
   return (
-    <section className="relative ">
+    <section id="home" className="relative ">
       <Image
         src={heroImage}
         alt="heroImage"

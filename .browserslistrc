@@ -1,0 +1,14 @@
+# Target modern browsers only to reduce polyfills
+# This reduces the bundle size by ~14 KiB
+
+# Modern browsers (last 2 versions)
+last 2 versions
+
+# Not dead browsers
+not dead
+
+# Modern browser support
+> 0.5%
+not IE 11
+not op_mini all
+

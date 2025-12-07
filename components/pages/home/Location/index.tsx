@@ -11,7 +11,7 @@ type Props = {};
 const locations = [
   {
     id: 1,
-    name: "فرع المدينة المنوّرة - الفرع الرئيسي - حي الإسكان - طريق القصيم",
+    name: "فرع المدينة المنوّرة  - حي الإسكان - طريق القصيم",
     link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
   },
   {
@@ -31,7 +31,7 @@ function Location({}: Props) {
   const activeLocationData = locations[activeLocation];
 
   return (
-    <section className="py-12 md:py-16 ">
+    <section id="branches" className="py-12 md:py-16 ">
       <div className="container mx-auto flex items-stretch flex-col lg:flex-row justify-between gap-8 lg:gap-10">
         <div className="w-full lg:max-w-[700px] flex flex-col">
           {/* titles & description */}
@@ -111,6 +111,8 @@ function Location({}: Props) {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
+              // Add fetchpriority to defer non-critical iframe
+              fetchPriority="low"
             />
           )}
         </motion.div>

@@ -6,7 +6,7 @@ type Props = {};
 
 function ContactUs({}: Props) {
   return (
-    <section className="py-12 md:py-16 ">
+    <section id="contact" className="py-12 md:py-16 ">
       <div className="container flex  flex-col   gap-10 w-full ">
         <div className="flex flex-col gap-2 sm:gap-1 ">
           <motion.h2

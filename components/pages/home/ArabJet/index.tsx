@@ -7,7 +7,7 @@ type Props = {};
 
 function ArabJet({}: Props) {
   return (
-    <section className="py-12 md:py-16 bg-bg-section">
+    <section id="arab-jet" className="py-12 md:py-16 bg-bg-section">
       <div className="container flex  flex-col   gap-10 w-full ">
         <div className="flex flex-col gap-2 sm:gap-1 ">
           <motion.h2

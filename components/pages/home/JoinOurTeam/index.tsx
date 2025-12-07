@@ -8,7 +8,7 @@ type Props = {};
 
 function JoinOurTeam({}: Props) {
   return (
-    <section className="py-12 md:py-16 bg-bg-section">
+    <section id="careers" className="py-12 md:py-16 bg-bg-section">
       <div className="container mx-auto flex items-stretch flex-col lg:flex-row justify-between gap-8 lg:gap-10">
         {/* image */}
         <motion.div

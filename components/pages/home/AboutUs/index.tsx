@@ -73,7 +73,7 @@ const items = [
 ];
 function AboutUs({}: Props) {
   return (
-    <section className="py-12 md:py-16 bg-bg-section">
+    <section id="about" className="py-12 md:py-16 bg-bg-section">
       <div className="container flex items-center flex-col lg:flex-row justify-between lg:gap-10 gap-24  ">
         <div className="w-full max-w-[720px] ">
           {/* titles & description */}

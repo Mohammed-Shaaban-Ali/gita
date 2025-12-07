@@ -4,20 +4,20 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Search, Menu, X } from "lucide-react";
 import logo from "@/public/logo/logo.svg";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
 const menuItems = [
-  { label: "الرئيسية", href: "/" },
-  { label: "تطبيقنا", href: "/app" },
-  { label: "من نحن", href: "/about" },
-  { label: "بروفايلنا", href: "/profile" },
-  { label: "انضم لفريقنا", href: "/careers" },
-  { label: "عرب جت", href: "/arab-jet" },
-  { label: "فروعنا", href: "/branches" },
-  { label: "تواصل معنا", href: "/contact" },
+  { label: "الرئيسية", href: "#home" },
+  { label: "تطبيقنا", href: "#app" },
+  { label: "من نحن", href: "#about" },
+  { label: "بروفايلنا", href: "#profile" },
+  { label: "انضم لفريقنا", href: "#careers" },
+  { label: "عرب جت", href: "#arab-jet" },
+  { label: "فروعنا", href: "#branches" },
+  { label: "تواصل معنا", href: "#contact" },
 ];
 
 function Navbar({}: Props) {
@@ -45,7 +45,17 @@ function Navbar({}: Props) {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-white text-18 font-medium hover:opacity-80 transition-opacity whitespace-nowrap"
+                  className="text-white text-18 font-medium hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -98,8 +108,18 @@ function Navbar({}: Props) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.15 + index * 0.05, duration: 0.3 }}
-                    className="text-white text-base font-medium hover:opacity-80 transition-opacity py-1"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-white text-base font-medium hover:opacity-80 transition-opacity py-1 cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobileMenuOpen(false);
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        element.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }
+                    }}
                   >
                     {item.label}
                   </motion.a>

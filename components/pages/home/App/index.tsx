@@ -14,7 +14,7 @@ type Props = {};
 
 function App({}: Props) {
   return (
-    <section className="py-12 md:py-16 container">
+    <section id="app" className="py-12 md:py-16 container">
       {/* titles & description */}
       <div className="flex flex-col gap-2 sm:gap-1 ">
         <motion.h2
