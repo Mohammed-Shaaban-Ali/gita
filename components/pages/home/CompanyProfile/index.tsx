@@ -1,13 +1,31 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import companyProfileImage from "@/public/images/CompanyProfileImage.png";
 import pdfIcon from "@/public/icons/pdf.svg";
 import eyeIcon from "@/public/icons/Eye.svg";
 import downloadIcon from "@/public/icons/file-download.svg";
+
 type Props = {};
+
+const pdfs = [
+  {
+    title: "كتيب الامتياز التجاري للذهبية العالمية و مزايا الاستثمار .pdf",
+    size: "40.0 ميجا",
+    url: "/pdfs/كتيب الامتياز التجاري للذهبية العالمية و مزايا الاستثمار .pdf",
+  },
+  {
+    title: "ملف الأمتياز التجاري.pdf",
+    size: "4.5 ميجا",
+    url: "/pdfs/ملف الأمتياز التجاري.pdf",
+  },
+  // {
+  //   title: "ملف الاستثمار.pdf",
+  //   size: "1.3 ميجا",
+  //   url: "/pdfs/ملف الاستثمار.pdf",
+  // },
+];
 
 function CompanyProfile({}: Props) {
   return (
@@ -63,8 +81,8 @@ function CompanyProfile({}: Props) {
           </motion.div>
 
           {/* items */}
-          <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8">
-            {Array.from({ length: 3 }).map((_, index) => (
+          <div className="flex flex-col gap-4 sm:gap-6 mt-6 sm:mt-8 w-full">
+            {pdfs.map((pdf, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -75,12 +93,12 @@ function CompanyProfile({}: Props) {
                   delay: 0.2 + index * 0.1,
                   ease: "easeOut",
                 }}
-                className="flex items-center gap-3 sm:gap-4"
+                className="flex items-center gap-3 sm:gap-4 w-full"
               >
                 <div className="min-w-12 sm:min-w-14 md:min-w-16 h-12 sm:h-14 md:h-16 bg-[#E6F3F166] rounded-md flex items-center justify-center text-lg sm:text-xl md:text-[24px] font-bold text-green">
                   {index + 1}
                 </div>
-                <div className="w-full sm:flex-1 h-auto sm:h-16 px-3 sm:px-4 py-3 sm:py-0 bg-white rounded-md border border-gray-300 flex items-start sm:items-center justify-between gap-3 sm:gap-5">
+                <div className="w-full flex-1 h-auto sm:h-16 px-3 sm:px-4 py-3 sm:py-0 bg-white rounded-md border border-gray-300 flex items-start sm:items-center justify-between gap-3 sm:gap-5">
                   <div className="flex items-center gap-2 flex-1 min-w-0">
                     <Image
                       src={pdfIcon}
@@ -90,18 +108,23 @@ function CompanyProfile({}: Props) {
                       className="min-w-6 h-6 shrink-0"
                     />
                     <div className="flex flex-col gap-0 min-w-0">
-                      <h4 className="text-xs sm:text-sm md:text-[14px] font-medium truncate">
-                        ملف بروفايل الشركة.pdf
+                      <h4 className="text-[14px] font-medium line-clamp-1">
+                        {pdf.title}
                       </h4>
                       <p className="text-[10px] sm:text-xs md:text-[12px] text-gray-500">
-                        1.3 ميجا
+                        {pdf.size}
                       </p>
                     </div>
                   </div>
 
                   {/* icons */}
                   <div className="flex items-center gap-2 shrink-0">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center">
+                    {/* show pdf */}
+                    <button
+                      onClick={() => window.open(pdf.url, "_blank")}
+                      className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center"
+                      aria-label="عرض PDF"
+                    >
                       <Image
                         src={eyeIcon}
                         alt="eye"
@@ -109,8 +132,20 @@ function CompanyProfile({}: Props) {
                         height={18}
                         className="min-w-4 h-4 sm:min-w-5 sm:h-5"
                       />
-                    </div>
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center">
+                    </button>
+                    {/* download pdf */}
+                    <button
+                      onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = pdf.url;
+                        link.download = pdf.title;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
+                      className="w-9 h-9 sm:w-10 sm:h-10 bg-[#E6F3F166] hover:bg-[#E6F3F1] transition-all duration-300 cursor-pointer rounded-md flex items-center justify-center"
+                      aria-label="تحميل PDF"
+                    >
                       <Image
                         src={downloadIcon}
                         alt="download"
@@ -118,7 +153,7 @@ function CompanyProfile({}: Props) {
                         height={18}
                         className="min-w-4 h-4 sm:min-w-5 sm:h-5"
                       />
-                    </div>
+                    </button>
                   </div>
                 </div>
               </motion.div>

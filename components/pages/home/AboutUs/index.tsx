@@ -7,13 +7,75 @@ import airplaneCircleIcon from "@/public/icons/airplaneCircle.svg";
 import airplaneIcon from "@/public/icons/airplane.svg";
 import { OrbitingCircles } from "./orbiting-circles";
 import Image from "next/image";
+
+import Ourvision from "@/public/icons/Ourvision.svg";
+import Ourvalues from "@/public/icons/Ourvalues.svg";
+import Ourmessage from "@/public/icons/Ourmessage.svg";
+
 type Props = {};
 
+const visionText =
+  'أن تكون "الذهبية العالمية GITA" الخيار الوطني والإقليمي الأول في قطاع السفر والسياحة، والوجهة الموثوقة للعملاء والشركاء عبر منظومة تقدم قيمة عالية وتجربة سفر متميزة.';
+
+const missionText =
+  'تلتزم "الذهبية العالمية GITA" بتقديم حلول سفر وسياحة عالية الجودة ترتكز على الدقة والاحترافية، عبر توفير خيارات متنوعة وخدمات موثوقة تسهل رحلات العملاء وتمنحهم تجربة مريحة وآمنة، وتعمل على توظيف التقنيات الحديثة وتطوير خدمات مبتكرة ترتقي بجودة الحياة، وتدعم مستهدفات رؤية السعودية 2030 في تعزيز السياحة وتمكين التحوّل الرقمي ورفع كفاءة واستدامة قطاع السفر.';
+
+const values = [
+  {
+    title: "الاحترافية والموثوقية",
+    description:
+      "تُدار جميع العمليات وفق أعلى معايير الجودة والشفافية لضمان تقديم خدمة متناسقة وموثوقة.",
+  },
+  {
+    title: "رضا العملاء",
+    description:
+      "يُحرص على تلبية احتياجات العملاء وتوقعاتهم مع تقديم تجربة سفر مصممة لتجاوز مستوى الرضا المتوقع.",
+  },
+  {
+    title: "الابتكار التقني",
+    description:
+      "تعتمد أنظمة وتقنيات حديثة في إدارة الحجوزات، والتقارير، وخدمة العملاء، بما يضمن تحسين الكفاءة التشغيلية ورفع جودة الأداء.",
+  },
+  {
+    title: "المرونة والتخصيص",
+    description:
+      "تُقدّم حلول سفر مخصصة تلائم نوع العميل واحتياجاته المختلفة بطريقة مرنة وديناميكية.",
+  },
+  {
+    title: "التجربة الملهمة",
+    description:
+      "يُعمل على جعل كل خدمة تجربة ذات قيمة، قادرة على إلهام العميل وتحقيق طموحاته.",
+  },
+  {
+    title: "الخبرة والمعرفة",
+    description:
+      "يُعتمد على فريق عمل متمرس يمتلك الخبرة والمعرفة اللازمة لتقديم التوصيات والحلول الأكثر ملاءمة وفاعلية.",
+  },
+];
+
+const items = [
+  {
+    icon: Ourvision,
+    title: "رؤيتنا",
+    description: visionText,
+  },
+  {
+    icon: Ourmessage,
+    title: "رسالتنا",
+    description: missionText,
+  },
+  {
+    icon: Ourvalues,
+    title: "قيمنا",
+    description: "",
+    values: values,
+  },
+];
 function AboutUs({}: Props) {
   return (
-    <section className="py-12 md:py-16 bg-[#E9F1F152]">
+    <section className="py-12 md:py-16 bg-bg-section">
       <div className="container flex items-center flex-col lg:flex-row justify-between lg:gap-10 gap-24  ">
-        <div className="w-full max-w-[800px] lg:max-w-[600px]">
+        <div className="w-full max-w-[720px] ">
           {/* titles & description */}
           <div className="flex flex-col gap-2 sm:gap-1 ">
             <motion.h2
@@ -39,8 +101,8 @@ function AboutUs({}: Props) {
           </div>
 
           {/* items */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
-            {Array.from({ length: 4 }).map((_, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 mt-8">
+            {items.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -51,7 +113,13 @@ function AboutUs({}: Props) {
                   delay: 0.3 + index * 0.1,
                   ease: "easeOut",
                 }}
-                className="flex gap-2 bg-white rounded-xl p-3 pb-4 flex-col"
+                className={`flex gap-2 bg-white/80 rounded-xl p-3 pb-4 flex-col ${
+                  index === 2
+                    ? "sm:col-span-5 col-span-1"
+                    : index === 1
+                    ? "sm:col-span-3 col-span-1"
+                    : "sm:col-span-2 col-span-1"
+                }`}
               >
                 <motion.div
                   initial={{ scale: 0 }}
@@ -62,33 +130,55 @@ function AboutUs({}: Props) {
                     delay: 0.4 + index * 0.1,
                     type: "spring",
                   }}
-                  className="bg-[#E9F5EE] rounded-full w-14 h-14"
-                ></motion.div>
-                <h4 className="text-18 font-semibold px-1">رؤيتنا</h4>
-                <ul className="mt-1 list-inside space-y-2.5">
-                  {[
-                    "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.",
-                    "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.",
-                    "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة.",
-                  ].map((item, itemIndex) => (
-                    <motion.li
-                      key={itemIndex}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.3,
-                        delay: 0.5 + index * 0.1 + itemIndex * 0.05,
-                      }}
-                      className="text-14 text-black leading-tight flex items-start gap-2"
-                    >
-                      <span className="text-18 text-black leading-tight inline-block w-2 h-2">
-                        •
-                      </span>
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
+                  className="bg-[#E9F5EE] rounded-full w-14 h-14 flex items-center justify-center"
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
+                </motion.div>
+                <h4 className="text-18 font-semibold px-1">{item.title}</h4>
+                {item.values ? (
+                  <ul className="mt-1 list-inside space-y-2.5">
+                    {item.values.map((value, valueIndex) => (
+                      <motion.li
+                        key={valueIndex}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.3,
+                          delay: 0.5 + index * 0.1 + valueIndex * 0.05,
+                        }}
+                        className="text-14 text-black leading-tight flex items-start gap-2"
+                      >
+                        <span className="text-18 text-black leading-tight inline-block w-2 h-2 mt-1">
+                          •
+                        </span>
+                        <div>
+                          <span className="font-semibold">{value.title}:</span>{" "}
+                          {value.description}
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                ) : (
+                  <motion.p
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 0.5 + index * 0.1,
+                    }}
+                    className="text-14 text-black line-clamp-5 mt-1"
+                  >
+                    {item.description}
+                  </motion.p>
+                )}
               </motion.div>
             ))}
           </div>

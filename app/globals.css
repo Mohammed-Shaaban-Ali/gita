@@ -49,6 +49,7 @@
   --color-green-light: var(--green-light);
   --color-yellow: var(--yellow);
   --color-gray: var(--gray);
+  --color-bg-section: var(--bg-section);
 }
 
 :root {
@@ -90,7 +91,8 @@
   --green: #008270;
   --green-light: #e6f3f1;
   --yellow: #fffcf3;
-  --gray: #727272;
+  --gray: #5e5e5e;
+  --bg-section: #e9f1f152;
 }
 
 .dark {
@@ -151,6 +153,18 @@
   }
   .text-20 {
     @apply text-[18px]  md:text-[20px];
+  }
+  .text-22 {
+    @apply text-[21px]  md:text-[22px];
+  }
+  .text-24 {
+    @apply text-[20px]  md:text-[24px];
+  }
+  .text-28 {
+    @apply text-[24px]  md:text-[28px];
+  }
+  .text-30 {
+    @apply text-[26px]  md:text-[30px];
   }
   .text-32 {
     @apply text-[28px]  md:text-[32px];
