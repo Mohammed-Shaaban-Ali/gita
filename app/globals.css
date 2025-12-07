@@ -140,23 +140,6 @@
     @apply bg-background text-foreground font-rubik;
   }
 
-  /* Performance optimizations for animations */
-  [data-framer-component] {
-    will-change: transform, opacity;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
-
-  /* LCP optimization - ensure hero section renders quickly */
-  #home {
-    contain: layout style paint;
-  }
-
-  /* Optimize image rendering for LCP */
-  #home img[priority] {
-    fetchpriority: high;
-  }
-
   .container {
     @apply max-w-[1280px]! mx-auto px-4!;
   }
