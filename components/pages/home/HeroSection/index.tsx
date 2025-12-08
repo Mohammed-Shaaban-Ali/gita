@@ -8,7 +8,7 @@ type Props = {};
 
 function HeroSection({}: Props) {
   return (
-    <section id="home" className="relative ">
+    <section id="home" className="relative pt-12 sm:pt-14 md:pt-16">
       <Image
         src={heroImage}
         alt="heroImage"
@@ -19,8 +19,6 @@ function HeroSection({}: Props) {
         className="object-cover z-[-1]"
       />
       <section className="">
-        {/* navbar */}
-        <Navbar />
         {/* whatsapp  */}
         <Whatsapp />
         {/* hero content */}

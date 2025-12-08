@@ -20,7 +20,6 @@ export default function Home() {
       <JoinOurTeam />
       <ContactUs />
       <Franchise />
-      <Footer />
     </main>
   );
 }

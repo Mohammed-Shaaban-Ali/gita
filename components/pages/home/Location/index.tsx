@@ -12,17 +12,17 @@ const locations = [
   {
     id: 1,
     name: "فرع المدينة المنوّرة  - حي الإسكان - طريق القصيم",
-    link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
+    link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.1594962624513!2d39.64520837365203!3d24.445251061749573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbfd08c6794f1%3A0x8973c5d7f49238dc!2z2KfZhNmI2YPYp9mE2Kkg2KfZhNiw2YfYqNmK2Kkg2KfZhNi52KfZhNmF2YrYqSDZhNmE2LPZgdixINmI2KfZhNiz2YrYp9it2Kk!5e0!3m2!1sen!2seg!4v1765179241417!5m2!1sen!2seg",
   },
-  {
-    id: 2,
-    name: "فرع الرياض - حي نمار - طريق ديراب",
-    link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
-  },
+  // {
+  //   id: 2,
+  //   name: "فرع الرياض - حي نمار - طريق ديراب",
+  //   link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
+  // },
   {
     id: 3,
     name: "فرع عرعر - حي الناصرية",
-    link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
+    link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.527982403609!2d41.03124067395243!3d30.9557449748234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x156c0df5397ba2cb%3A0x83bc1631df398b0e!2z2KfZhNmI2YPYp9mE2Kkg2KfZhNiw2YfYqNmK2Kkg2KfZhNi52KfZhNmF2YrYqSDZhNmE2LPZgdixINmI2KfZhNiz2YrYp9it2Kkg2LnYsdi52LEgR2lUQQ!5e0!3m2!1sen!2seg!4v1765179147319!5m2!1sen!2seg",
   },
 ];
 
@@ -95,7 +95,7 @@ function Location({}: Props) {
           </div>
 
           {/* items */}
-          <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-5 flex-1">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-8">
             {locations.map((location, index) => (
               <motion.div
                 key={location.id}
@@ -107,7 +107,7 @@ function Location({}: Props) {
                   delay: 0.2 + index * 0.1,
                 }}
                 onClick={() => handleLocationClick(index)}
-                className={`flex bg-green-light rounded-lg p-3 sm:p-4 min-h-[64px] sm:min-h-[80px] items-center gap-2 sm:gap-2.5 cursor-pointer transition-all ${
+                className={`flex bg-green-light rounded-lg p-3 sm:p-4 min-h-[64px] sm:min-h-[80px] max-h-[100px] items-center gap-2 sm:gap-2.5 cursor-pointer transition-all ${
                   activeLocation === index
                     ? "ring-2 ring-green shadow-lg"
                     : "hover:bg-green-light/80"
@@ -136,7 +136,7 @@ function Location({}: Props) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="relative bg-green w-full lg:w-[420px] xl:w-[480px] h-[300px] sm:h-[400px] lg:h-[420px] xl:h-[480px] rounded-lg overflow-hidden shrink-0"
+          className="relative bg-green w-full lg:w-[420px] xl:w-[480px] h-[300px] sm:h-[400px] lg:h-[420px] xl:h-[450px] rounded-lg overflow-hidden shrink-0"
         >
           {shouldLoadMap && activeLocationData && (
             <iframe

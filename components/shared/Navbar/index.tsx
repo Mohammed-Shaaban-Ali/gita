@@ -24,7 +24,7 @@ function Navbar({}: Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className=" w-full">
+    <nav className=" w-full absolute top-0 left-0 z-50">
       <div className="container ">
         <div className="flex items-center justify-between  h-12 sm:h-14 md:h-16">
           <div className="flex items-center gap-9 ">
@@ -99,7 +99,7 @@ function Navbar({}: Props) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden overflow-hidden border-t border-white/20 mt-2 pt-4 pb-4"
+              className="lg:hidden overflow-hidden border-t border-white/20 bg-white  p-4 "
             >
               <div className="flex flex-col gap-3">
                 {menuItems.map((item, index) => (
@@ -109,7 +109,7 @@ function Navbar({}: Props) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.15 + index * 0.05, duration: 0.3 }}
-                    className="text-white text-base font-medium hover:opacity-80 transition-opacity py-1 cursor-pointer"
+                    className="text-black text-base font-medium hover:opacity-80 transition-opacity py-1 cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
                       setIsMobileMenuOpen(false);

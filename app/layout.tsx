@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -25,7 +29,10 @@ export default function RootLayout({
       <body
         className={` ${rubik.variable} antialiased bg-yellow overflow-x-hidden!`}
       >
-        {children}
+        <Suspense fallback={<Loading />}>
+          <Navbar />
+          {children} <Footer />
+        </Suspense>
       </body>
     </html>
   );
