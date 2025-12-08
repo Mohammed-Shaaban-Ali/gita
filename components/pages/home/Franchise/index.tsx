@@ -11,6 +11,33 @@ function Franchise({}: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [videoDimensions, setVideoDimensions] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedMetadata = () => {
+      setVideoDimensions({
+        width: video.videoWidth,
+        height: video.videoHeight,
+      });
+    };
+
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
+
+    // If metadata is already loaded
+    if (video.readyState >= 1) {
+      handleLoadedMetadata();
+    }
+
+    return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
+    };
+  }, []);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -73,7 +100,21 @@ function Franchise({}: Props) {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           whileHover={{ scale: 1.02 }}
-          className="order-2 lg:order-1 border-4 border-primary relative  w-full lg:w-[420px] xl:w-[480px] h-auto rounded-2xl overflow-hidden cursor-pointer group"
+          className={`order-2 lg:order-1 border-4 border-primary relative ${
+            isFullscreen
+              ? ""
+              : "w-full lg:w-[420px] xl:w-[480px] max-h-[400px] h-auto"
+          } rounded-2xl overflow-hidden cursor-pointer group`}
+          style={
+            isFullscreen && videoDimensions
+              ? {
+                  width: `${videoDimensions.width}px`,
+                  height: `${videoDimensions.height}px`,
+                  maxWidth: "100vw",
+                  maxHeight: "100vh",
+                }
+              : undefined
+          }
           onClick={toggleFullscreen}
         >
           <video
@@ -83,7 +124,11 @@ function Franchise({}: Props) {
             muted
             loop
             controls={isFullscreen}
-            className="w-full h-full object-cover"
+            className={
+              isFullscreen
+                ? "w-full h-full object-contain"
+                : "w-full h-full object-cover"
+            }
           >
             <source src="/pdfs/Franchise.mp4" type="video/mp4" />
             Your browser does not support the video tag.
