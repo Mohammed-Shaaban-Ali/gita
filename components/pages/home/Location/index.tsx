@@ -14,11 +14,11 @@ const locations = [
     name: "فرع المدينة المنوّرة  - حي الإسكان - طريق القصيم",
     link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.1594962624513!2d39.64520837365203!3d24.445251061749573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbfd08c6794f1%3A0x8973c5d7f49238dc!2z2KfZhNmI2YPYp9mE2Kkg2KfZhNiw2YfYqNmK2Kkg2KfZhNi52KfZhNmF2YrYqSDZhNmE2LPZgdixINmI2KfZhNiz2YrYp9it2Kk!5e0!3m2!1sen!2seg!4v1765179241417!5m2!1sen!2seg",
   },
-  // {
-  //   id: 2,
-  //   name: "فرع الرياض - حي نمار - طريق ديراب",
-  //   link: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.5239632861603!2d41.03605948486308!3d30.955857181559992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU3JzIxLjEiTiA0McKwMDInMDEuOSJF!5e0!3m2!1sar!2seg!4v1765101279118!5m2!1sar!2seg",
-  // },
+  {
+    id: 2,
+    name: "فرع الرياض - حي نمار - طريق ديراب",
+    link: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21127.881564645522!2d46.6956381!3d24.5753244!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0f00341dcb43%3A0x7050a1667f20747a!2z2KfZhNiw2YfYqNmK2Kkg2KfZhNi52KfZhNmF2YrYqSDZhNmE2LPZgdixINmI2KfZhNiz2YrYp9it2Kk!5e1!3m2!1sar!2seg!4v1765180688260!5m2!1sar!2seg",
+  },
   {
     id: 3,
     name: "فرع عرعر - حي الناصرية",

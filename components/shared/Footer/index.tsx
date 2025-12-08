@@ -16,7 +16,7 @@ const links = [
   },
   {
     label: "بروفايل الشركة",
-    href: "#",
+    href: "#profile",
   },
 ];
 function Footer({}: Props) {
