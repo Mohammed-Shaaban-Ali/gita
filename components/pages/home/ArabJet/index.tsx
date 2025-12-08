@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Form from "./Form";
 
 type Props = {};
 
@@ -31,7 +32,7 @@ function ArabJet({}: Props) {
         </div>
 
         {/* form */}
-        <div className="max-w-[670px] w-full h-[470px] bg-white/80 rounded-xl mx-auto"></div>
+        <Form />
       </div>
     </section>
   );
