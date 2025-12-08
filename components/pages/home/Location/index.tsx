@@ -88,9 +88,9 @@ function Location({}: Props) {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base sm:text-lg lg:text-xl text-gray text-center lg:text-right leading-relaxed"
             >
-              تعريف على مواقع فروع شركتنا ، حيث يمكنك أن تولد مثل هذا النص أو
-              العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها
-              التطبيق.
+              اكتشف مواقع فروعنا المنتشرة في مختلف أنحاء المملكة العربية
+              السعودية. يمكنك زيارة أي فرع من فروعنا للحصول على خدماتنا المتميزة
+              واستشارة فريقنا المتخصص.
             </motion.p>
           </div>
 

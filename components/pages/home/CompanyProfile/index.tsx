@@ -20,11 +20,11 @@ const pdfs = [
     size: "4.5 ميجا",
     url: "/pdfs/ملف الأمتياز التجاري.pdf",
   },
-  {
-    title: "ملف الفرانشايز.mp4",
-    size: "68.5 ميجا",
-    url: "/pdfs/Franchise.mp4",
-  },
+  // {
+  //   title: "ملف الفرانشايز.mp4",
+  //   size: "68.5 ميجا",
+  //   url: "/pdfs/Franchise.mp4",
+  // },
 ];
 
 function CompanyProfile({}: Props) {

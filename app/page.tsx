@@ -7,7 +7,6 @@ import Location from "@/components/pages/home/Location";
 import JoinOurTeam from "@/components/pages/home/JoinOurTeam";
 import ContactUs from "@/components/pages/home/ContactUs";
 import Franchise from "@/components/pages/home/Franchise";
-import Footer from "@/components/shared/Footer";
 export default function Home() {
   return (
     <main>
