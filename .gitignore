@@ -40,9 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# large video files
-*.mp4
+# large video files (handled by Git LFS)
+# *.mp4 files are tracked by Git LFS
 *.avi
 *.mov
 *.mkv
-public/pdfs/*.mp4
