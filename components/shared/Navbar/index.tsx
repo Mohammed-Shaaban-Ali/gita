@@ -14,7 +14,7 @@ const menuItems = [
   { label: "تطبيقنا", href: "#app" },
   { label: "من نحن", href: "#about" },
   { label: "بروفايلنا", href: "#profile" },
-  { label: "انضم لفريقنا", href: "#careers" },
+  // { label: "انضم لفريقنا", href: "#careers" },
   { label: "عرب جت", href: "#arab-jet" },
   { label: "فروعنا", href: "#branches" },
   { label: "تواصل معنا", href: "#contact" },
