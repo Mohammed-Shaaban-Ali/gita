@@ -4,7 +4,7 @@ import ArabJet from "@/components/pages/home/ArabJet";
 import CompanyProfile from "@/components/pages/home/CompanyProfile";
 import HeroSection from "@/components/pages/home/HeroSection";
 import Location from "@/components/pages/home/Location";
-import JoinOurTeam from "@/components/pages/home/JoinOurTeam";
+// import JoinOurTeam from "@/components/pages/home/JoinOurTeam";
 import ContactUs from "@/components/pages/home/ContactUs";
 import Franchise from "@/components/pages/home/Franchise";
 export default function Home() {

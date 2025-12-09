@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo/gitalogo.svg";
+import logo from "@/public/logo/gitalogo.png";
 import Link from "next/link";
 
 type Props = {};
@@ -29,11 +29,11 @@ function Footer({}: Props) {
             {/*  Logo and Text */}
             <div className="flex flex-col md:flex-row items-center gap-4 ">
               {/* Logo */}
-              <Image src={logo} alt="logo" width={48} height={48} />
+              <Image src={logo} alt="logo" width={56} height={56} />
               {/* Text */}
               <p className="text-18  leading-tight max-w-lg">
-                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد
-                هذا النص من مولد النص العربى، حيث يمكنك..
+                منصة واحده.. تجمع السفر، التقنية، والامتياز التجاري في
+                منظومة تشغيل متقدمة{" "}
               </p>
             </div>
             {/*  Links */}
