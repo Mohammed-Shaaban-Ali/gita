@@ -192,7 +192,10 @@ function Franchise({}: Props) {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="/pdfs/ملف الأمتياز التجاري.pdf" target="_blank">
+              <Link
+                href="/pdfs/كتيب الامتياز التجاري للذهبية العالمية و مزايا الاستثمار .pdf"
+                target="_blank"
+              >
                 <Button variant="outline" size="lg" className="w-full">
                   الدليل الإرشادي{" "}
                   <ArrowUpRight className="w-4 h-4 -rotate-90" />
