@@ -11,9 +11,9 @@ type Props = {};
 
 const menuItems = [
   { label: "الرئيسية", href: "#home" },
-  { label: "تطبيقنا", href: "#app" },
-  { label: "من نحن", href: "#about" },
   { label: "بروفايلنا", href: "#profile" },
+  { label: "من نحن", href: "#about" },
+  { label: "تطبيقنا", href: "#app" },
   // { label: "انضم لفريقنا", href: "#careers" },
   { label: "عرب جت", href: "#arab-jet" },
   { label: "فروعنا", href: "#branches" },

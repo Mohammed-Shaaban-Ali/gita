@@ -180,7 +180,7 @@ function Franchise({}: Props) {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="https://franchise.gita.sa/">
+              <Link href="https://franchise.gita.sa/" target="_blank">
                 <Button variant="default" size="lg" className="w-full">
                   إذهب إلى موقعنا{" "}
                   <ArrowUpRight className="w-4 h-4 -rotate-90" />
@@ -192,7 +192,7 @@ function Franchise({}: Props) {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href="https://franchise.gita.sa/">
+              <Link href="/pdfs/ملف الأمتياز التجاري.pdf" target="_blank">
                 <Button variant="outline" size="lg" className="w-full">
                   الدليل الإرشادي{" "}
                   <ArrowUpRight className="w-4 h-4 -rotate-90" />
